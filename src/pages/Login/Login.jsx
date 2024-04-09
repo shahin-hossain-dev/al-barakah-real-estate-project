@@ -17,8 +17,9 @@ export const background = {
   backgroundSize: "cover",
   backgroundPosition: "center",
 };
+
 const Login = () => {
-  const { userLogin, googleLogin } = useContext(AuthContext);
+  const { userLogin, googleLogin, githubLogin } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
   const navigate = useNavigate();
   const {
@@ -53,6 +54,18 @@ const Login = () => {
         if (loggedUser) {
           navigate("/");
           successAlert("login");
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+  // github login
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then((result) => {
+        const loggedUser = result.user;
+        if (loggedUser) {
+          successAlert("Login Successful");
+          navigate("/");
         }
       })
       .catch((error) => console.log(error));
@@ -119,7 +132,10 @@ const Login = () => {
             </button>
           </div>
           <div className="form-control my-6 mx-8">
-            <button className="btn btn-neutral text-white">
+            <button
+              onClick={handleGithubLogin}
+              className="btn btn-neutral text-white"
+            >
               <FaGithub />
               Continue with Github
             </button>

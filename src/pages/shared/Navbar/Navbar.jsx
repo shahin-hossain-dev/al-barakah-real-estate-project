@@ -4,12 +4,10 @@ import userImg from "../../../assets/user.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
-  if (user) {
-    console.log(user.photoURL);
-  }
-
+  console.log(user);
   const handleLogout = () => {
     logout()
       .then(() => {
@@ -64,7 +62,8 @@ const Navbar = () => {
                 <div
                   tabIndex={0}
                   role="button"
-                  className="btn btn-ghost btn-circle avatar"
+                  className="btn btn-ghost btn-circle flex justify-center items-center  avatar tooltip tooltip-bottom"
+                  data-tip={user?.displayName}
                 >
                   <div className="w-10 rounded-full">
                     <img
@@ -78,7 +77,7 @@ const Navbar = () => {
                   className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <a className="justify-between">
+                    <a className="justify-between ">
                       Profile
                       <span className="badge">New</span>
                     </a>
