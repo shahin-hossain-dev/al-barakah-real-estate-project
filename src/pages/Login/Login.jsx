@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import image1 from "../../assets/image1.webp";
 import Navbar from "../shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+// react toast
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { AlertContext } from "../../layouts/Root";
+
 export const background = {
   backgroundImage: `url(${image1})`,
   backgroundRepeat: "no-repeat",
@@ -9,22 +16,38 @@ export const background = {
   backgroundPosition: "center",
 };
 const Login = () => {
+  const { userLogin } = useContext(AuthContext);
+  const { successAlert } = useContext(AlertContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-
+  // login handler
   const handleLogin = (userData) => {
-    console.log(userData);
+    const email = userData.email;
+    const password = userData.password;
+    // user login
+    userLogin(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        if (loggedUser) {
+          navigate("/");
+          successAlert("login");
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
   return (
     <div style={background}>
       <Navbar />
 
       <div className=" flex justify-center items-center min-h-screen bg-[#0000004D]">
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl glass">
+        <div className="card shrink-0 w-full max-w-sm shadow-2xl glass mt-24">
           <h1 className="text-3xl mt-5 text-center font-bold text-white">
             Login now!
           </h1>
@@ -52,25 +75,27 @@ const Login = () => {
                 className="input input-bordered"
                 required
               />
-              <label className="label">
-                <a
-                  href="#"
-                  className="label-text-alt link link-hover text-white"
-                >
-                  Forgot password?
-                </a>
-              </label>
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-neutral text-white">Login</button>
             </div>
           </form>
-          <p className="label-text-alt text-white text-center mb-8">
+          <p className="label-text-alt text-white text-center ">
             Don't have any account? please{" "}
             <Link to={"/register"} className=" link link-hover link-warning">
               Register
             </Link>
           </p>
+          <div className="form-control mt-6 mx-8">
+            <button className="btn btn-info text-white">
+              Continue With Google
+            </button>
+          </div>
+          <div className="form-control my-6 mx-8">
+            <button className="btn btn-neutral text-white">
+              Continue with Github
+            </button>
+          </div>
         </div>
       </div>
     </div>

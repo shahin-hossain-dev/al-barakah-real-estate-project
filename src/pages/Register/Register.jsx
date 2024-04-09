@@ -2,13 +2,39 @@ import { useForm } from "react-hook-form";
 import Navbar from "../shared/Navbar/Navbar";
 import image1 from "../../assets/image1.webp";
 import { background } from "../Login/Login";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+// react toast
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { AlertContext } from "../../layouts/Root";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const { successAlert } = useContext(AlertContext);
   const { register, handleSubmit } = useForm();
+
+  const navigate = useNavigate();
 
   const handleRegister = (userData) => {
     console.log(userData);
+    const name = userData.name;
+    const email = userData.email;
+    const password = userData.password;
+    const photoURL = userData.photoURL;
+    // create user with firebase
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        if (loggedUser) {
+          successAlert("register");
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div style={background}>

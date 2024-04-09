@@ -20,10 +20,6 @@ const Banner = () => {
       modules={[Navigation, Autoplay]}
       slidesPerView={1}
       loop={true}
-      onSlideChange={() => {
-        console.log("slide change");
-      }}
-      onSwiper={(swiper) => console.log(swiper)}
       autoplay={{
         delay: 3000,
         disableOnInteraction: false,
