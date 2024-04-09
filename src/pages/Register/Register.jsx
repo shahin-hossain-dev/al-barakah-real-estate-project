@@ -45,7 +45,10 @@ const Register = () => {
           <h1 className="text-3xl mt-5 text-center font-bold text-white">
             Create Account
           </h1>
-          <form onSubmit={handleSubmit(handleRegister)} className="card-body">
+          <form
+            onSubmit={handleSubmit(handleRegister)}
+            className="card-body pt-0"
+          >
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-white">Name</span>
@@ -93,14 +96,6 @@ const Register = () => {
                 className="input input-bordered"
                 required
               />
-              <label className="label">
-                <a
-                  href="#"
-                  className="label-text-alt link link-hover text-white"
-                >
-                  Forgot password?
-                </a>
-              </label>
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-neutral text-white">Register</button>

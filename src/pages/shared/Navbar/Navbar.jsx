@@ -1,7 +1,22 @@
 import logo from "../../../assets/al-barakah.png";
 import ActiveLink from "../../../components/ActiveLink/ActiveLink";
-import user from "../../../assets/user.png";
+import userImg from "../../../assets/user.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
+import { Link } from "react-router-dom";
 const Navbar = () => {
+  const { user, logout } = useContext(AuthContext);
+  if (user) {
+    console.log(user.photoURL);
+  }
+
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        console.log("Logout successful");
+      })
+      .catch((error) => console.log(error));
+  };
   const links = (
     <>
       <ActiveLink to={"/"}>Home</ActiveLink>
@@ -43,35 +58,48 @@ const Navbar = () => {
           {links}
         </div>
         <div className="navbar-end">
-          <div className="dropdown dropdown-end me-3">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar"
-            >
-              <div className="w-10 rounded-full">
-                <img alt="User Image" src={user} />
+          {user ? (
+            <div className="flex justify-center">
+              <div className="dropdown dropdown-end me-3">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost btn-circle avatar"
+                >
+                  <div className="w-10 rounded-full">
+                    <img
+                      alt="User Image"
+                      src={user.photoURL ? user.photoURL : userImg}
+                    />
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <a className="justify-between">
+                      Profile
+                      <span className="badge">New</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>Settings</a>
+                  </li>
+                  <li>
+                    <a>Logout</a>
+                  </li>
+                </ul>
               </div>
+              <button onClick={handleLogout} className="btn">
+                Logout
+              </button>
             </div>
-            <ul
-              tabIndex={0}
-              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
-              </li>
-            </ul>
-          </div>
-          <button className="btn">Logout</button>
+          ) : (
+            <button className="btn btn-neutral">
+              <Link to={"/login"}>Login</Link>
+            </button>
+          )}
         </div>
       </div>
     </div>

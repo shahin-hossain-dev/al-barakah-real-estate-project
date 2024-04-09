@@ -8,7 +8,9 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AlertContext } from "../../layouts/Root";
-
+// icons
+import { FaGoogle } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 export const background = {
   backgroundImage: `url(${image1})`,
   backgroundRepeat: "no-repeat",
@@ -16,7 +18,7 @@ export const background = {
   backgroundPosition: "center",
 };
 const Login = () => {
-  const { userLogin } = useContext(AuthContext);
+  const { userLogin, googleLogin } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
   const navigate = useNavigate();
   const {
@@ -42,6 +44,19 @@ const Login = () => {
         console.log(error.message);
       });
   };
+  // google login
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        if (loggedUser) {
+          navigate("/");
+          successAlert("login");
+        }
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div style={background}>
       <Navbar />
@@ -51,7 +66,10 @@ const Login = () => {
           <h1 className="text-3xl mt-5 text-center font-bold text-white">
             Login now!
           </h1>
-          <form onSubmit={handleSubmit(handleLogin)} className="card-body">
+          <form
+            onSubmit={handleSubmit(handleLogin)}
+            className="card-body  pt-0"
+          >
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-white">Email</span>
@@ -76,6 +94,11 @@ const Login = () => {
                 required
               />
             </div>
+            <label className="label">
+              <a href="#" className="label-text-alt link link-hover text-white">
+                Forgot password?
+              </a>
+            </label>
             <div className="form-control mt-6">
               <button className="btn btn-neutral text-white">Login</button>
             </div>
@@ -87,12 +110,17 @@ const Login = () => {
             </Link>
           </p>
           <div className="form-control mt-6 mx-8">
-            <button className="btn btn-info text-white">
+            <button
+              onClick={handleGoogleLogin}
+              className="btn btn-info text-white"
+            >
+              <FaGoogle />
               Continue With Google
             </button>
           </div>
           <div className="form-control my-6 mx-8">
             <button className="btn btn-neutral text-white">
+              <FaGithub />
               Continue with Github
             </button>
           </div>

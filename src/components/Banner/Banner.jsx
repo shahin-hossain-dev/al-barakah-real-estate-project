@@ -31,7 +31,7 @@ const Banner = () => {
         <div className="text-white relative h-full">
           <img
             src={image5}
-            className=" w-full h-[400px] md:[600px] lg:min-h-screen lg:h-full "
+            className=" w-full h-[400px] md:h-[600px] lg:min-h-screen lg:h-full "
             alt=""
           />
           <div className="absolute top-0 left-0 md:mt-10 lg:mt-0  h-[100%] w-[100%]  bg-gradient-to-r   from-[#000000CC] to-[#00000000] ">
@@ -39,7 +39,7 @@ const Banner = () => {
               <h2
                 data-aos="fade-right"
                 data-aos-duration="1000"
-                className="text-2xl md:text-5xl lg:text-7xl font-exo mb-5"
+                className="text-2xl md:text-5xl lg:text-7xl font-exo "
               >
                 Welcome Home <br /> Your Trusted Residential <br /> Real Estate
                 Partner{" "}
@@ -48,7 +48,7 @@ const Banner = () => {
                 data-aos="fade-right"
                 data-aos-delay="300"
                 data-aos-duration="1000"
-                className="md:w-2/3"
+                className="md:w-2/3 lg:w-1/2"
               >
                 Discover your dream home with us. From buying to selling, we've
                 got you covered. Experience personalized service and expert
@@ -62,7 +62,7 @@ const Banner = () => {
         <div className="text-white relative h-full">
           <img
             src={image1}
-            className=" w-full h-[400px] md:[600px] lg:min-h-screen lg:h-full "
+            className=" w-full h-[400px] md:h-[600px] lg:min-h-screen lg:h-full "
             alt=""
           />
           <div className="absolute top-0 left-0 md:mt-10 lg:mt-0  h-[100%] w-[100%]  bg-gradient-to-r   from-[#000000B3] to-[#00000000] ">
@@ -93,7 +93,7 @@ const Banner = () => {
         <div className="text-white relative h-full">
           <img
             src={image2}
-            className=" w-full h-[400px] md:[600px] lg:min-h-screen lg:h-full "
+            className=" w-full h-[400px] md:h-[600px] lg:min-h-screen lg:h-full "
             alt=""
           />
           <div className="absolute top-0 left-0 md:mt-10 lg:mt-0  h-[100%] w-[100%]  bg-gradient-to-r   from-[#000000B3] to-[#00000000] ">
@@ -124,7 +124,7 @@ const Banner = () => {
         <div className="text-white relative h-full">
           <img
             src={image3}
-            className=" w-full h-[400px] md:[600px] lg:min-h-screen lg:h-full "
+            className=" w-full h-[400px] md:h-[600px] lg:min-h-screen lg:h-full "
             alt=""
           />
           <div className="absolute top-0 left-0 md:mt-10 lg:mt-0  h-[100%] w-[100%]  bg-gradient-to-r   from-[#000000B3] to-[#00000000] ">
@@ -155,7 +155,7 @@ const Banner = () => {
         <div className="text-white relative h-full">
           <img
             src={image4}
-            className=" w-full h-[400px] md:[600px] lg:min-h-screen lg:h-full "
+            className=" w-full h-[400px] md:h-[600px] lg:min-h-screen lg:h-full "
             alt=""
           />
           <div className="absolute top-0 left-0 md:mt-10 lg:mt-0  h-[100%] w-[100%]  bg-gradient-to-r   from-[#000000B3] to-[#00000000] ">
