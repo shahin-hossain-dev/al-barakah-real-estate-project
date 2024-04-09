@@ -4,8 +4,6 @@ import Navbar from "../shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-// react toast
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AlertContext } from "../../layouts/Root";
 // icons

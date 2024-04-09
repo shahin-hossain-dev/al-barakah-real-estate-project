@@ -18,8 +18,8 @@ const Navbar = () => {
   const links = (
     <>
       <ActiveLink to={"/"}>Home</ActiveLink>
-      <ActiveLink to={"/register"}>Register</ActiveLink>
-      <ActiveLink to={"/login"}>Login</ActiveLink>
+      <ActiveLink to={"/update-profile"}>Update Profile</ActiveLink>
+      <ActiveLink to={"/user-profile"}>User Profile</ActiveLink>
     </>
   );
   return (
