@@ -18,7 +18,6 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleRegister = (userData) => {
-    console.log(userData);
     const name = userData.name;
     const email = userData.email;
     const password = userData.password;

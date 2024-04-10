@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import image1 from "../../assets/image1.webp";
+import image5 from "../../assets/image5.webp";
 import Navbar from "../shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
@@ -10,7 +10,7 @@ import { AlertContext } from "../../layouts/Root";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 export const background = {
-  backgroundImage: `url(${image1})`,
+  backgroundImage: `url(${image5})`,
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -48,7 +48,6 @@ const Login = () => {
     googleLogin()
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
         if (loggedUser) {
           navigate("/");
           successAlert("login");

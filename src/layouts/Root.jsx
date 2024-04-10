@@ -19,6 +19,12 @@ const Root = () => {
         hideProgressBar: true,
         autoClose: 1000,
       });
+    } else if (type === "profile update") {
+      toast.success("User Profile Updated", {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 1000,
+      });
     }
   };
   const alertInfo = {

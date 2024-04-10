@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
-  console.log(user);
+
   const handleLogout = () => {
     logout()
       .then(() => {
