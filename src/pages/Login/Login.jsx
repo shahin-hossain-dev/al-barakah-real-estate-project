@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import image5 from "../../assets/image5.webp";
 import Navbar from "../shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
@@ -20,6 +20,8 @@ const Login = () => {
   const { userLogin, googleLogin, githubLogin } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  // console.log(location.state?.pathname);
   const {
     register,
     handleSubmit,
@@ -35,7 +37,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         if (loggedUser) {
-          navigate("/");
+          navigate(location.state?.pathname || "/");
           successAlert("login");
         }
       })
@@ -49,7 +51,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         if (loggedUser) {
-          navigate("/");
+          navigate(location.state?.pathname || "/");
           successAlert("login");
         }
       })
@@ -62,7 +64,7 @@ const Login = () => {
         const loggedUser = result.user;
         if (loggedUser) {
           successAlert("Login Successful");
-          navigate("/");
+          navigate(location.state?.pathname || "/");
         }
       })
       .catch((error) => console.log(error));
