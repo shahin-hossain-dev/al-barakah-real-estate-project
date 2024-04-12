@@ -6,7 +6,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user, logout, loading } = useContext(AuthContext);
 
   const handleLogout = () => {
     logout()
@@ -19,12 +19,11 @@ const Navbar = () => {
     <>
       <ActiveLink to={"/"}>Home</ActiveLink>
       <ActiveLink to={"/update-profile"}>Update Profile</ActiveLink>
-      <ActiveLink to={"/user-profile"}>User Profile</ActiveLink>
     </>
   );
   return (
     <div className="absolute z-50 glass">
-      <div className="navbar ">
+      <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className=" lg:hidden">
@@ -77,20 +76,19 @@ const Navbar = () => {
                   className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <a className="justify-between ">
-                      Profile
-                      <span className="badge">New</span>
-                    </a>
+                    <button className="justify-between ">
+                      <Link to={"/user-profile"}>User Profile</Link>
+                    </button>
                   </li>
                   <li>
-                    <a>Settings</a>
+                    <button>Settings</button>
                   </li>
                   <li>
-                    <a>Logout</a>
+                    <button>Logout</button>
                   </li>
                 </ul>
               </div>
-              <button onClick={handleLogout} className="btn">
+              <button onClick={handleLogout} className="btn btn-neutral">
                 Logout
               </button>
             </div>
