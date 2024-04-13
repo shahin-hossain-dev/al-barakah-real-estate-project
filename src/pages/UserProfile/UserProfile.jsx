@@ -3,11 +3,9 @@ import Navbar from "../shared/Navbar/Navbar";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 import coverImg from "../../assets/image6.webp";
-import ActiveLink from "../../components/ActiveLink/ActiveLink";
 
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
-  console.log(user.photoURL);
   return (
     <div>
       <Navbar />

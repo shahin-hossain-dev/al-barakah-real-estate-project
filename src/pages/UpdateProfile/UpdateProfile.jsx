@@ -1,13 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "../shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+
 import { background } from "../Login/Login";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import { AlertContext } from "../../layouts/Root";
-import { useLocation } from "react-router-dom";
 
 const UpdateProfile = () => {
   const { user } = useContext(AuthContext);
@@ -28,7 +27,7 @@ const UpdateProfile = () => {
       displayName: name,
       photoURL: photoURL,
     })
-      .then(() => {
+      .then((result) => {
         successAlert("profile update");
         console.log("Profile updated");
       })
@@ -80,13 +79,14 @@ const UpdateProfile = () => {
                   {...register("email")}
                   type="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered disabled"
+                  disabled
                   required
                 />
               </div>
 
               <div className="form-control mt-6">
-                <button className="btn btn-neutral text-white">
+                <button className={`btn btn-neutral text-white`}>
                   Update Profile
                 </button>
               </div>

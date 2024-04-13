@@ -6,10 +6,10 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
-
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
@@ -23,6 +23,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
+
   // sing in with email & password
   const userLogin = (email, password) => {
     setLoading(true);
@@ -53,6 +54,14 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
+  // update profile
+  const updateUserProfile = (name, photo) => {
+    setLoading(true);
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
   const authInfo = {
     user,
     loading,
@@ -60,6 +69,7 @@ const AuthProvider = ({ children }) => {
     userLogin,
     googleLogin,
     githubLogin,
+    updateUserProfile,
     logout,
   };
   return (

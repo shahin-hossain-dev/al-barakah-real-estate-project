@@ -1,19 +1,24 @@
 import { useForm } from "react-hook-form";
 import Navbar from "../shared/Navbar/Navbar";
-import image1 from "../../assets/image1.webp";
 import { background } from "../Login/Login";
-import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { Link, useNavigate, Navigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-// react toast
-import { ToastContainer, toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 import { AlertContext } from "../../layouts/Root";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+
   const { successAlert } = useContext(AlertContext);
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -22,17 +27,20 @@ const Register = () => {
     const email = userData.email;
     const password = userData.password;
     const photoURL = userData.photoURL;
+    console.log(name);
     // create user with firebase
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        if (loggedUser) {
-          successAlert("register");
-          navigate("/");
-        }
+        updateUserProfile(name, photoURL);
+        navigate("/");
+        successAlert("register");
       })
       .catch((error) => {
         console.log(error);
+        if (error.message.includes("email-already")) {
+          setError("Email already been used");
+        }
       });
   };
   return (
@@ -53,48 +61,63 @@ const Register = () => {
                 <span className="label-text text-white">Name</span>
               </label>
               <input
-                {...register("name")}
-                type="text"
+                {...register("name", { required: true })}
                 placeholder="Name"
                 className="input input-bordered"
-                required
               />
+              {errors.name && (
+                <span className="text-red-600">
+                  Please fill out this field{" "}
+                </span>
+              )}
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-white">Photo URL</span>
               </label>
               <input
-                {...register("photoURL")}
+                {...register("photoURL", { required: true })}
                 type="text"
                 placeholder="Photo URL"
                 className="input input-bordered"
-                required
               />
+              {errors.photoURL && (
+                <span className="text-red-600">
+                  Please fill out this field{" "}
+                </span>
+              )}
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-white">Email</span>
               </label>
               <input
-                {...register("email")}
+                {...register("email", { required: true })}
                 type="email"
                 placeholder="email"
                 className="input input-bordered"
-                required
               />
+              {errors.email && (
+                <span className="text-red-600">
+                  Please fill out this field{" "}
+                </span>
+              )}
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-white">Password</span>
               </label>
               <input
-                {...register("password")}
+                {...register("password", { required: true })}
                 type="password"
                 placeholder="password"
                 className="input input-bordered"
-                required
               />
+              {errors.password && (
+                <span className="text-red-600">
+                  Please fill out this field{" "}
+                </span>
+              )}
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-neutral text-white">Register</button>

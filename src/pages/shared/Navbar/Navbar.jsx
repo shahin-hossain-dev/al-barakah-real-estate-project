@@ -4,14 +4,15 @@ import userImg from "../../../assets/user.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Link } from "react-router-dom";
+import { AlertContext } from "../../../layouts/Root";
 
 const Navbar = () => {
   const { user, logout, loading } = useContext(AuthContext);
-
+  const { successAlert } = useContext(AlertContext);
   const handleLogout = () => {
     logout()
       .then(() => {
-        console.log("Logout successful");
+        successAlert("logout");
       })
       .catch((error) => console.log(error));
   };
@@ -54,6 +55,7 @@ const Navbar = () => {
         <div className=" gap-5 items-center navbar-center hidden lg:flex">
           {links}
         </div>
+
         <div className="navbar-end">
           {user ? (
             <div className="flex justify-center">
@@ -62,13 +64,10 @@ const Navbar = () => {
                   tabIndex={0}
                   role="button"
                   className="btn btn-ghost btn-circle flex justify-center items-center  avatar tooltip tooltip-bottom"
-                  data-tip={user?.displayName}
+                  data-tip={user.displayName && user.displayName}
                 >
                   <div className="w-10 rounded-full">
-                    <img
-                      alt="User Image"
-                      src={user.photoURL ? user.photoURL : userImg}
-                    />
+                    <img alt="User Image" src={user.photoURL || userImg} />
                   </div>
                 </div>
                 <ul

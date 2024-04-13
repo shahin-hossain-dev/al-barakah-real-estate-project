@@ -9,6 +9,7 @@ import { AlertContext } from "../../layouts/Root";
 // icons
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { updateProfile } from "firebase/auth";
 export const background = {
   backgroundImage: `url(${image5})`,
   backgroundRepeat: "no-repeat",
@@ -43,6 +44,9 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error.message);
+        if (error.message.includes("invalid")) {
+          successAlert("invalid");
+        }
       });
   };
   // google login
