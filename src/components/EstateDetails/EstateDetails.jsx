@@ -27,7 +27,7 @@ const EstateDetails = () => {
     facilities,
   } = estate;
 
-  console.log(estate);
+  // console.log(estate);
   const background = {
     backgroundImage: `linear-gradient(to right, #00000099, #00000000),url(${coverImg})`,
     backgroundRepeat: "no-repeat",
