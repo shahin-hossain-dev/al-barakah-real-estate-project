@@ -34,7 +34,7 @@ const Banner = () => {
             className=" w-full h-[400px] md:h-[600px] lg:min-h-screen  "
             alt=""
           />
-          <div className="absolute top-0 left-0 md:mt-10 lg:mt-0  h-[100%] w-[100%]  bg-gradient-to-r   from-[#000000CC] to-[#00000000] ">
+          <div className="absolute top-0 left-0 md:mt-10 lg:mt-0  h-[100%] w-[100%]  bg-gradient-to-r   from-[#00000099] to-[#00000000] ">
             <div className="flex justify-center  text-center md:text-start items-center flex-col md:items-start h-full lg:min-h-screen px-10 md:px-16">
               <div>
                 <h2

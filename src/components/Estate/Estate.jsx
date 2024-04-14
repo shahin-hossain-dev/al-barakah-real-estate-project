@@ -1,23 +1,55 @@
+import { IoLocationOutline } from "react-icons/io5";
+import { PiHouseLineBold } from "react-icons/pi";
+import { PiParallelogramBold } from "react-icons/pi";
+import { FaDollarSign } from "react-icons/fa6";
+
 const Estate = ({ estate }) => {
-  const { estate_title, image, location, price, segment_name, status } = estate;
+  const { estate_title, image, location, price, segment_name, status, area } =
+    estate;
 
   return (
     <div
-      className="card bg-base-100 shadow-xl"
+      className="card shadow-xl rounded-md relative border"
       data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-delay="300"
     >
       <figure>
-        <img src={image} alt="estate image" />
+        <img
+          src={image}
+          alt="estate image"
+          className="hover:scale-150 duration-500"
+        />
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+      <div className="card-body p-4 ">
+        <h2 className="card-title font-exo">{estate_title}</h2>
+        <div className="flex items-center gap-2 text-gray-500">
+          <IoLocationOutline />
+          <p>{location}</p>
+        </div>
+
+        <div className="flex items-center justify-between text-gray-500">
+          <div className="flex items-center gap-2">
+            <PiHouseLineBold className="" />
+            <p>{segment_name}</p>
+          </div>
+          <div className="flex items-center gap-2 ">
+            <PiParallelogramBold />
+            <p>{area}</p>
+          </div>
+        </div>
+        <hr className="my-3" />
+        <div className="flex justify-between items-center mt-auto">
+          <div className="flex items-center ">
+            <FaDollarSign className="text-2xl" />
+            <h3 className="text-2xl font-bold">{price}</h3>
+          </div>
+          <button className="btn btn-neutral">View Property</button>
         </div>
       </div>
+      <span className="bg-neutral  text-white rounded-lg absolute px-3 py-1 top-2 right-2">
+        {status}
+      </span>
     </div>
   );
 };

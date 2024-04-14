@@ -31,7 +31,7 @@ const Root = () => {
   };
   return (
     <AlertContext.Provider value={alertInfo}>
-      <div>
+      <div className="font-openSans">
         <Outlet />
         <ToastContainer />
       </div>
