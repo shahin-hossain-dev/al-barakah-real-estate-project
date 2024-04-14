@@ -2,7 +2,8 @@ import { useForm } from "react-hook-form";
 import Navbar from "../shared/Navbar/Navbar";
 import { background } from "../Login/Login";
 import { Link, useNavigate, Navigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
 import { AuthContext } from "../../providers/AuthProvider";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -10,24 +11,25 @@ import { AlertContext } from "../../layouts/Root";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
-
   const { successAlert } = useContext(AlertContext);
+  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
   const handleRegister = (userData) => {
-    const name = userData.name;
-    const email = userData.email;
-    const password = userData.password;
-    const photoURL = userData.photoURL;
-    console.log(name);
+    const { name, email, password, photoURL } = userData;
+
+    if (password.length < 6) {
+      setError("Password should be at least 6 characters");
+      return;
+    }
+
     // create user with firebase
     createUser(email, password)
       .then((result) => {
@@ -38,8 +40,11 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error);
+
         if (error.message.includes("email-already")) {
           setError("Email already been used");
+        } else {
+          setError(error.message);
         }
       });
   };
@@ -58,11 +63,11 @@ const Register = () => {
           >
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white">Name</span>
+                <span className="label-text text-white">Full Name</span>
               </label>
               <input
                 {...register("name", { required: true })}
-                placeholder="Name"
+                placeholder="Full Name"
                 className="input input-bordered"
               />
               {errors.name && (
@@ -120,7 +125,9 @@ const Register = () => {
               )}
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-neutral text-white">Register</button>
+              <button type="submit" className="btn btn-neutral text-white">
+                Register
+              </button>
             </div>
           </form>
           <p className="label-text-alt text-white text-center mb-8">
@@ -129,6 +136,7 @@ const Register = () => {
               Login
             </Link>
           </p>
+          <p className="text-red-600 text-center py-3">{error}</p>
         </div>
       </div>
     </div>

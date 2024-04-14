@@ -1,0 +1,111 @@
+[
+    {
+      "image": "https://example.com/image1.jpg",
+      "estate_title": "Modern Apartment with Stunning Views",
+      "id": "001",
+      "segment_name": "Apartment",
+      "description": "This modern apartment features floor-to-ceiling windows, a spacious living area, and a balcony overlooking the city skyline.",
+      "price": 500000,
+      "status": "sale",
+      "area": "1500 sq ft",
+      "location": "Dhanmondi, Dhaka",
+      "facilities": ["living room", "balcony", "gym"]
+    },
+    {
+      "image": "https://example.com/image2.jpg",
+      "estate_title": "Luxury Villa with Private Pool",
+      "id": "002",
+      "segment_name": "Villa",
+      "description": "Experience luxury living in this stunning villa featuring a private pool, landscaped gardens, and spacious interiors.",
+      "price": 1200000,
+      "status": "sale",
+      "area": "4000 sq ft",
+      "location": "Gulshan, Dhaka",
+      "facilities": ["living room", "swimming pool", "garden"]
+    },
+    {
+      "image": "https://example.com/image3.jpg",
+      "estate_title": "Cozy Cottage near the Lake",
+      "id": "003",
+      "segment_name": "Cottage",
+      "description": "Escape to this charming cottage nestled near the lake, perfect for weekend getaways and serene retreats.",
+      "price": 300000,
+      "status": "sale",
+      "area": "1200 sq ft",
+      "location": "Cox's Bazar",
+      "facilities": ["living room", "garden", "fireplace"]
+    },
+    {
+      "image": "https://example.com/image4.jpg",
+      "estate_title": "Spacious Townhouse in Prime Location",
+      "id": "004",
+      "segment_name": "Townhouse",
+      "description": "Enjoy city living at its finest in this spacious townhouse located in a prime neighborhood close to amenities and parks.",
+      "price": 700000,
+      "status": "rent",
+      "area": "2500 sq ft",
+      "location": "Uttara, Dhaka",
+      "facilities": ["living room", "garage", "terrace"]
+    },
+    {
+      "image": "https://example.com/image5.jpg",
+      "estate_title": "Modern Loft with Industrial Charm",
+      "id": "005",
+      "segment_name": "Loft",
+      "description": "Embrace urban living in this stylish loft featuring exposed brick walls, high ceilings, and contemporary finishes.",
+      "price": 400000,
+      "status": "rent",
+      "area": "1800 sq ft",
+      "location": "Banani, Dhaka",
+      "facilities": ["living room", "study area", "exposed brick"]
+    },
+    {
+      "image": "https://example.com/image6.jpg",
+      "estate_title": "Elegant Mansion with Panoramic Views",
+      "id": "006",
+      "segment_name": "Mansion",
+      "description": "Live in luxury in this grand mansion boasting panoramic views, lavish interiors, and extensive grounds.",
+      "price": 5000000,
+      "status": "rent",
+      "area": "10000 sq ft",
+      "location": "Gulshan, Dhaka",
+      "facilities": ["living room", "swimming pool", "home theater"]
+    },
+    {
+      "image": "https://example.com/image7.jpg",
+      "estate_title": "Sleek Studio Apartment in Trendy Neighborhood",
+      "id": "007",
+      "segment_name": "Apartment",
+      "description": "Experience urban living in this sleek studio apartment located in a vibrant neighborhood with trendy cafes and boutiques.",
+      "price": 250000,
+      "status": "sale",
+      "area": "800 sq ft",
+      "location": "Bashundhara, Dhaka",
+      "facilities": ["living room", "gym", "rooftop terrace"]
+    },
+    {
+      "image": "https://example.com/image8.jpg",
+      "estate_title": "Charming Bungalow with Vintage Appeal",
+      "id": "008",
+      "segment_name": "Bungalow",
+      "description": "Step back in time in this charming bungalow featuring vintage decor, a sunroom, and a lush backyard garden.",
+      "price": 350000,
+      "status": "rent",
+      "area": "1600 sq ft",
+      "location": "Cox's Bazar",
+      "facilities": ["living room", "garden", "sunroom"]
+    },
+    {
+      "image": "https://example.com/image9.jpg",
+      "estate_title": "Rustic Cabin Retreat in the Mountains",
+      "id": "009",
+      "segment_name": "Cabin",
+      "description": "Escape to nature in this rustic cabin retreat nestled in the mountains, complete with a cozy fireplace and scenic views.",
+      "price": 200000,
+      "status": "rent",
+      "area": "1000 sq ft",
+      "location": "Bandarban",
+      "facilities": ["living room", "fireplace", "deck"]
+    }
+  ]
+  
