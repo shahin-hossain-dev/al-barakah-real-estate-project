@@ -1,7 +1,7 @@
 [
     {
-      "image": "https://example.com/image1.jpg",
-      "estate_title": "Modern Apartment with Stunning Views",
+      "image": "https://imgdb.net/storage/uploads/241c50c0f8df589dcfb16fe0351ec272748b3b846fda4128dc29725a0eb46d4c.png",
+      "estate_title": "Modern Apartment",
       "id": "001",
       "segment_name": "Apartment",
       "description": "This modern apartment features floor-to-ceiling windows, a spacious living area, and a balcony overlooking the city skyline.",
@@ -12,10 +12,10 @@
       "facilities": ["living room", "balcony", "gym"]
     },
     {
-      "image": "https://example.com/image2.jpg",
+      "image": "https://imgdb.net/storage/uploads/7d40ed27e45a76365f0f2be09d5f775fb134ec5505d79da541e9568641ef0f6f.png",
       "estate_title": "Luxury Villa with Private Pool",
       "id": "002",
-      "segment_name": "Villa",
+      "segment_name": "Single-family homes",
       "description": "Experience luxury living in this stunning villa featuring a private pool, landscaped gardens, and spacious interiors.",
       "price": 1200000,
       "status": "sale",
@@ -24,10 +24,10 @@
       "facilities": ["living room", "swimming pool", "garden"]
     },
     {
-      "image": "https://example.com/image3.jpg",
+      "image": "https://imgdb.net/storage/uploads/f8a071804179332e6895ac034711aa025e3791d6d6c602b2626f6c5ec9c6540a.png",
       "estate_title": "Cozy Cottage near the Lake",
       "id": "003",
-      "segment_name": "Cottage",
+      "segment_name": "Single-family homes",
       "description": "Escape to this charming cottage nestled near the lake, perfect for weekend getaways and serene retreats.",
       "price": 300000,
       "status": "sale",
@@ -36,7 +36,7 @@
       "facilities": ["living room", "garden", "fireplace"]
     },
     {
-      "image": "https://example.com/image4.jpg",
+      "image": "https://imgdb.net/storage/uploads/135b0e28876048197812e7cb9cb42b82f18f171622c86e6c7ed9953345e84262.png",
       "estate_title": "Spacious Townhouse in Prime Location",
       "id": "004",
       "segment_name": "Townhouse",
@@ -48,10 +48,10 @@
       "facilities": ["living room", "garage", "terrace"]
     },
     {
-      "image": "https://example.com/image5.jpg",
+      "image": "https://imgdb.net/storage/uploads/61b6fdbb79743024d377bb31ca301a682e930911234392d759b551a57f154edd.png",
       "estate_title": "Modern Loft with Industrial Charm",
       "id": "005",
-      "segment_name": "Loft",
+      "segment_name": "Apartments",
       "description": "Embrace urban living in this stylish loft featuring exposed brick walls, high ceilings, and contemporary finishes.",
       "price": 400000,
       "status": "rent",
@@ -60,10 +60,10 @@
       "facilities": ["living room", "study area", "exposed brick"]
     },
     {
-      "image": "https://example.com/image6.jpg",
+      "image": "https://imgdb.net/storage/uploads/3061b4dbaff1d8cc5c83922cf171f5b1d8bf225eab64345eefae2e4f813ccaa2.png",
       "estate_title": "Elegant Mansion with Panoramic Views",
       "id": "006",
-      "segment_name": "Mansion",
+      "segment_name": "Single-family homes",
       "description": "Live in luxury in this grand mansion boasting panoramic views, lavish interiors, and extensive grounds.",
       "price": 5000000,
       "status": "rent",
@@ -72,10 +72,10 @@
       "facilities": ["living room", "swimming pool", "home theater"]
     },
     {
-      "image": "https://example.com/image7.jpg",
+      "image": "https://imgdb.net/storage/uploads/80f5d7e38d41f77cbb322e97f332f9c3497f022f8429315de94374d1db9725ca.jpg",
       "estate_title": "Sleek Studio Apartment in Trendy Neighborhood",
       "id": "007",
-      "segment_name": "Apartment",
+      "segment_name": "Student housing",
       "description": "Experience urban living in this sleek studio apartment located in a vibrant neighborhood with trendy cafes and boutiques.",
       "price": 250000,
       "status": "sale",
@@ -84,10 +84,10 @@
       "facilities": ["living room", "gym", "rooftop terrace"]
     },
     {
-      "image": "https://example.com/image8.jpg",
+      "image": "https://imgdb.net/storage/uploads/dc606e98e5ccbe41fdada7c4217827c9a42f83e8a9df3f25fb04232fb0f4848d.png",
       "estate_title": "Charming Bungalow with Vintage Appeal",
       "id": "008",
-      "segment_name": "Bungalow",
+      "segment_name": "Vacation rentals",
       "description": "Step back in time in this charming bungalow featuring vintage decor, a sunroom, and a lush backyard garden.",
       "price": 350000,
       "status": "rent",
@@ -96,10 +96,10 @@
       "facilities": ["living room", "garden", "sunroom"]
     },
     {
-      "image": "https://example.com/image9.jpg",
+      "image": "https://imgdb.net/storage/uploads/cb7391ac4bf477201339b4f0b4096f6f45d8702d1df0dab58df449b3dd4de6a7.png",
       "estate_title": "Rustic Cabin Retreat in the Mountains",
       "id": "009",
-      "segment_name": "Cabin",
+      "segment_name": "Vacation rentals",
       "description": "Escape to nature in this rustic cabin retreat nestled in the mountains, complete with a cozy fireplace and scenic views.",
       "price": 200000,
       "status": "rent",
