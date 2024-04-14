@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 // react toast
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../pages/shared/Footer/Footer";
 
 export const AlertContext = createContext(null);
 const Root = () => {
@@ -34,6 +35,7 @@ const Root = () => {
       <div className="font-openSans">
         <Outlet />
         <ToastContainer />
+        <Footer />
       </div>
     </AlertContext.Provider>
   );
