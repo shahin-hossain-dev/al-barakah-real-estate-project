@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../../pages/shared/Navbar/Navbar";
 import coverImg from "../../assets/image6.webp";
@@ -8,7 +8,10 @@ import { IoLocationOutline } from "react-icons/io5";
 const EstateDetails = () => {
   const estates = useLoaderData();
   const estateId = useParams();
-
+  // for page show from top when route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const estate = estates.find((estate) => estate.id === estateId.id);
 
   const {
@@ -39,11 +42,11 @@ const EstateDetails = () => {
         style={background}
         className="w-full h-[300px] md:h-[500px] relative "
       >
-        <div className="w-full font-exo text-center text-2xl md:text-3xl text-white  absolute top-1/2 -translate-y-1/2  left-1/2 -translate-x-1/2">
+        <div className="w-full font-exo text-center text-2xl md:text-3xl text-white absolute top-1/2 -translate-y-1/2  left-1/2 -translate-x-1/2">
           <p
             className="mb-5 font-medium"
             data-aos="fade-right"
-            data-aos-delay="200"
+            data-aos-delay="300"
           >
             Property Details About
           </p>
@@ -51,7 +54,7 @@ const EstateDetails = () => {
           <p
             className="text-style font-semibold"
             data-aos="fade-left"
-            data-aos-delay="200"
+            data-aos-delay="300"
           >
             {estate_title}
           </p>
@@ -89,8 +92,6 @@ const EstateDetails = () => {
           </div>
         </div>
         <img
-          data-aos="zoom-out"
-          data-aos-delay="200"
           src={image}
           alt=""
           className="w-full h-[500px] object-cover rounded-md"

@@ -16,6 +16,7 @@ const Navbar = () => {
       })
       .catch((error) => console.log(error));
   };
+
   const links = (
     <>
       <ActiveLink to={"/"}>Home</ActiveLink>
@@ -45,7 +46,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box "
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-5 shadow bg-neutral w-[200px] rounded-box "
             >
               {links}
             </ul>
