@@ -6,7 +6,7 @@
       "segment_name": "Apartment",
       "description": "This modern apartment features floor-to-ceiling windows, a spacious living area, and a balcony overlooking the city skyline.",
       "price": 500000,
-      "status": "sale",
+      "status": "Sale",
       "area": "1500 sq ft",
       "location": "Dhanmondi, Dhaka",
       "facilities": ["living room", "balcony", "gym"]
@@ -18,7 +18,7 @@
       "segment_name": "Single-family homes",
       "description": "Experience luxury living in this stunning villa featuring a private pool, landscaped gardens, and spacious interiors.",
       "price": 1200000,
-      "status": "sale",
+      "status": "Sale",
       "area": "4000 sq ft",
       "location": "Gulshan, Dhaka",
       "facilities": ["living room", "swimming pool", "garden"]
@@ -30,7 +30,7 @@
       "segment_name": "Single-family homes",
       "description": "Escape to this charming cottage nestled near the lake, perfect for weekend getaways and serene retreats.",
       "price": 300000,
-      "status": "sale",
+      "status": "Sale",
       "area": "1200 sq ft",
       "location": "Cox's Bazar",
       "facilities": ["living room", "garden", "fireplace"]
@@ -42,7 +42,7 @@
       "segment_name": "Townhouse",
       "description": "Enjoy city living at its finest in this spacious townhouse located in a prime neighborhood close to amenities and parks.",
       "price": 700000,
-      "status": "rent",
+      "status": "Rent",
       "area": "2500 sq ft",
       "location": "Uttara, Dhaka",
       "facilities": ["living room", "garage", "terrace"]
@@ -54,7 +54,7 @@
       "segment_name": "Apartments",
       "description": "Embrace urban living in this stylish loft featuring exposed brick walls, high ceilings, and contemporary finishes.",
       "price": 400000,
-      "status": "rent",
+      "status": "Rent",
       "area": "1800 sq ft",
       "location": "Banani, Dhaka",
       "facilities": ["living room", "study area", "exposed brick"]
@@ -66,7 +66,7 @@
       "segment_name": "Single-family homes",
       "description": "Live in luxury in this grand mansion boasting panoramic views, lavish interiors, and extensive grounds.",
       "price": 5000000,
-      "status": "rent",
+      "status": "Rent",
       "area": "10000 sq ft",
       "location": "Gulshan, Dhaka",
       "facilities": ["living room", "swimming pool", "home theater"]
@@ -78,7 +78,7 @@
       "segment_name": "Student housing",
       "description": "Experience urban living in this sleek studio apartment located in a vibrant neighborhood with trendy cafes and boutiques.",
       "price": 250000,
-      "status": "sale",
+      "status": "Sale",
       "area": "800 sq ft",
       "location": "Bashundhara, Dhaka",
       "facilities": ["living room", "gym", "rooftop terrace"]
@@ -90,7 +90,7 @@
       "segment_name": "Vacation rentals",
       "description": "Step back in time in this charming bungalow featuring vintage decor, a sunroom, and a lush backyard garden.",
       "price": 350000,
-      "status": "rent",
+      "status": "Rent",
       "area": "1600 sq ft",
       "location": "Cox's Bazar",
       "facilities": ["living room", "garden", "sunroom"]
@@ -102,7 +102,7 @@
       "segment_name": "Vacation rentals",
       "description": "Escape to nature in this rustic cabin retreat nestled in the mountains, complete with a cozy fireplace and scenic views.",
       "price": 200000,
-      "status": "rent",
+      "status": "Rent",
       "area": "1000 sq ft",
       "location": "Bandarban",
       "facilities": ["living room", "fireplace", "deck"]

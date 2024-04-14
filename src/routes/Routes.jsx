@@ -7,6 +7,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import UserProfile from "../pages/UserProfile/UserProfile";
 import PrivateRoute from "./PrivateRoute";
+import EstateDetails from "../components/EstateDetails/EstateDetails";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
             <UserProfile />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/estate-details/:id",
+        element: <EstateDetails />,
+        loader: () => fetch("/data.json"),
       },
     ],
   },

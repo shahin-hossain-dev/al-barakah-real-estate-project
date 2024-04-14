@@ -1,0 +1,16 @@
+.text-style {
+    position: relative;
+  }
+ 
+  .text-style::after {
+    content: "";
+    width: 100px;
+    height: 7px;
+    
+    background: linear-gradient(to right, #CA965C, #EEC373);;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+  }
