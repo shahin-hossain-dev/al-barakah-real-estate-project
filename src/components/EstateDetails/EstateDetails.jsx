@@ -5,6 +5,9 @@ import coverImg from "../../assets/image6.webp";
 import "./EstateDetails.css";
 import { FaDollarSign } from "react-icons/fa6";
 import { IoLocationOutline } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
+import OurLocationMap from "../OurLocationMap/OurLocationMap";
+
 const EstateDetails = () => {
   const estates = useLoaderData();
   const estateId = useParams();
@@ -36,6 +39,9 @@ const EstateDetails = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Property Details | Al-Barakah Real Estate</title>
+      </Helmet>
       <Navbar />
       {/* property details banner */}
       <div
@@ -102,7 +108,7 @@ const EstateDetails = () => {
         </div>
         {/* details overview */}
         <div className="border-b">
-          <h2 className="text-xl mt-12 text-white bg-neutral inline-block rounded-md p-3">
+          <h2 className="mt-12 text-white bg-neutral inline-block rounded-md p-3">
             Overview
           </h2>
         </div>
@@ -153,6 +159,7 @@ const EstateDetails = () => {
           </div>
         </div>
       </div>
+      <OurLocationMap />
     </div>
   );
 };

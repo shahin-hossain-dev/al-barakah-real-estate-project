@@ -5,17 +5,24 @@ import Navbar from "../shared/Navbar/Navbar";
 import { AuthContext } from "../../providers/AuthProvider";
 import Estates from "../../components/Estates/Estates";
 import OurClients from "../../components/OurClients/OurClients";
+import ReactDOM from "react-dom";
+import { Helmet } from "react-helmet-async";
+import OurLocationMap from "../../components/OurLocationMap/OurLocationMap";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
 
   return (
     <div>
+      <Helmet>
+        <title>Home | Al-barakah Real Estate</title>
+      </Helmet>
       <Navbar />
       <Banner />
       <div className="lg:w-[85%] w-[95%] mx-auto">
         <Estates />
       </div>
+      <OurLocationMap />
       <OurClients />
     </div>
   );

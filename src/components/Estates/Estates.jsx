@@ -11,7 +11,7 @@ const Estates = () => {
   return (
     <div className="min-h-screen mt-12  md:mt-24">
       {/* estate title & description */}
-      <div className=" text-center space-y-4 ">
+      <div className=" text-center space-y-4 md:w-1/2 mx-auto">
         <h2
           className="text-2xl md:text-4xl font-bold font-exo"
           data-aos="fade-down"

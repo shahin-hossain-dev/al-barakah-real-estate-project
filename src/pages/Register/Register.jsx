@@ -3,11 +3,11 @@ import Navbar from "../shared/Navbar/Navbar";
 import { background } from "../Login/Login";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-
 import { AuthContext } from "../../providers/AuthProvider";
 
 import "react-toastify/dist/ReactToastify.css";
 import { AlertContext } from "../../layouts/Root";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, updateUserProfile, setUser } = useContext(AuthContext);
@@ -50,6 +50,9 @@ const Register = () => {
   };
   return (
     <div style={background}>
+      <Helmet>
+        <title>Register | Al-Barakah Real Estate</title>
+      </Helmet>
       <Navbar />
 
       <div className=" flex justify-center items-center min-h-screen bg-[#0000004D] pb-5">

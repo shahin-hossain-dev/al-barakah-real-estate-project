@@ -9,7 +9,8 @@ import { AlertContext } from "../../layouts/Root";
 // icons
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
+
 export const background = {
   backgroundImage: `url(${image5})`,
   backgroundRepeat: "no-repeat",
@@ -76,6 +77,9 @@ const Login = () => {
   };
   return (
     <div style={background}>
+      <Helmet>
+        <title>Login | Al-Barakah Real Estate</title>
+      </Helmet>
       <Navbar />
 
       <div className=" flex justify-center items-center min-h-screen bg-[#0000004D] pb-5">

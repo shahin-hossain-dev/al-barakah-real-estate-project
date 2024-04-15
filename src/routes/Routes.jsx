@@ -22,7 +22,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/our-agents",
-        element: <OurAgents />,
+        element: (
+          <PrivateRoute>
+            <OurAgents />
+          </PrivateRoute>
+        ),
         loader: () => fetch("/agents.json"),
       },
       {

@@ -4,6 +4,7 @@ import Navbar from "../shared/Navbar/Navbar";
 import { useLoaderData } from "react-router-dom";
 import Agent from "../../components/Agent/Agent";
 import OurClients from "../../components/OurClients/OurClients";
+import { Helmet } from "react-helmet-async";
 const OurAgents = () => {
   const agents = useLoaderData();
   console.log(agents);
@@ -16,6 +17,9 @@ const OurAgents = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Our Agent | Al-Barakah Real Estate</title>
+      </Helmet>
       <Navbar />
       <div
         className="w-full h-[300px] md:h-[400px] relative"

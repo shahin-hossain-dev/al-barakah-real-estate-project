@@ -3,11 +3,15 @@ import Navbar from "../shared/Navbar/Navbar";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 import coverImg from "../../assets/image6.webp";
+import { Helmet } from "react-helmet-async";
 
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
   return (
     <div>
+      <Helmet>
+        <title>User Profile | Al-Barakah Real Estate</title>
+      </Helmet>
       <Navbar />
       <div className="relative">
         <img src={coverImg} alt="" className="w-full h-[300px]  md:h-full" />
