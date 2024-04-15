@@ -8,6 +8,7 @@ import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import UserProfile from "../pages/UserProfile/UserProfile";
 import PrivateRoute from "./PrivateRoute";
 import EstateDetails from "../components/EstateDetails/EstateDetails";
+import OurAgents from "../pages/OurAgents/OurAgents";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/our-agents",
+        element: <OurAgents />,
       },
       {
         path: "/register",

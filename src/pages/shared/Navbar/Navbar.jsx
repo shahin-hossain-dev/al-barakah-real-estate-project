@@ -20,6 +20,7 @@ const Navbar = () => {
   const links = (
     <>
       <ActiveLink to={"/"}>Home</ActiveLink>
+      <ActiveLink to={"/our-agents"}>Our Agents</ActiveLink>
       <ActiveLink to={"/update-profile"}>Update Profile</ActiveLink>
     </>
   );
