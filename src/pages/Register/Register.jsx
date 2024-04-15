@@ -9,10 +9,14 @@ import "react-toastify/dist/ReactToastify.css";
 import { AlertContext } from "../../layouts/Root";
 import { Helmet } from "react-helmet-async";
 
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+
 const Register = () => {
   const { createUser, updateUserProfile, setUser } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
   const [error, setError] = useState("");
+  const [passwordShow, setPasswordShow] = useState(false);
   const {
     register,
     handleSubmit,
@@ -111,16 +115,25 @@ const Register = () => {
                 </span>
               )}
             </div>
-            <div className="form-control">
+            <div>
               <label className="label">
                 <span className="label-text text-white">Password</span>
               </label>
-              <input
-                {...register("password", { required: true })}
-                type="password"
-                placeholder="password"
-                className="input input-bordered"
-              />
+              <div className="form-control relative ">
+                <input
+                  {...register("password", { required: true })}
+                  type={passwordShow ? "text" : "password"}
+                  placeholder="password"
+                  className="input input-bordered "
+                />
+                {/* eye button */}
+                <button
+                  onClick={() => setPasswordShow(!passwordShow)}
+                  className="text-2xl absolute right-3 top-1/2 -translate-y-1/2"
+                >
+                  {passwordShow ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
               {errors.password && (
                 <span className="text-red-600">
                   Please fill out this field{" "}
