@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Navbar from "../shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
 
 import { background } from "../Login/Login";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
-import auth from "../../firebase/firebase.config";
 import { AlertContext } from "../../layouts/Root";
+import auth from "../../firebase/firebase.config";
 
 const UpdateProfile = () => {
   const { user, setUser } = useContext(AuthContext);
@@ -34,11 +34,11 @@ const UpdateProfile = () => {
       })
       .catch((error) => console.log(error));
   };
+
   return (
     <div>
       <div style={background}>
         <Navbar />
-
         <div className=" flex justify-center items-center min-h-screen ">
           <div className="card mt-24 shrink-0 w-full max-w-sm shadow-2xl glass">
             <h1 className="text-3xl mt-5 text-center font-bold text-white">
@@ -85,7 +85,6 @@ const UpdateProfile = () => {
                   required
                 />
               </div>
-
               <div className="form-control mt-6">
                 <button className={`btn btn-neutral text-white`}>
                   Update Profile

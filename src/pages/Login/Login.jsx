@@ -2,7 +2,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import image5 from "../../assets/image5.webp";
 import Navbar from "../shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import "react-toastify/dist/ReactToastify.css";
 import { AlertContext } from "../../layouts/Root";
@@ -20,6 +20,7 @@ export const background = {
 const Login = () => {
   const { userLogin, googleLogin, githubLogin } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   // console.log(location.state?.pathname);
@@ -59,7 +60,7 @@ const Login = () => {
           successAlert("login");
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
   // github login
   const handleGithubLogin = () => {
@@ -71,13 +72,13 @@ const Login = () => {
           navigate(location.state?.pathname || "/");
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
   return (
     <div style={background}>
       <Navbar />
 
-      <div className=" flex justify-center items-center min-h-screen bg-[#0000004D]">
+      <div className=" flex justify-center items-center min-h-screen bg-[#0000004D] pb-5">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl glass mt-24">
           <h1 className="text-3xl mt-5 text-center font-bold text-white">
             Login now!
@@ -143,6 +144,7 @@ const Login = () => {
               Continue with Github
             </button>
           </div>
+          <p className="text-red-600 text-center p-3">{error}</p>
         </div>
       </div>
     </div>
