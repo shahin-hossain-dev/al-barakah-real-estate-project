@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "image": "https://imgdb.net/storage/uploads/3a0ad269552f054996f06dc6b5acf9c2f609535207ca8e7ce707fa5d2fd80800.png",
+      "name": "Green Land"
+    },
+    {
+      "id": 2,
+      "image": "https://imgdb.net/storage/uploads/d9eda8dd0abc20454d7346c272bde6a8f39d5b4ae1a8b6cba49bd48cb3e2f409.png",
+      "name": "Real State"
+    },
+    {
+      "id": 3,
+      "image": "https://imgdb.net/storage/uploads/db45df461c8dfb8c9fb2ff6a3067cb5b7e9fedd27788a86a69bafe5044dd17c7.png",
+      "name": "Blue Ohio"
+    },
+    {
+      "id": 4,
+      "image": "https://imgdb.net/storage/uploads/173c55278699723b35e51c2687103ce45d1618ab919f9ebc021aa27c97cc60e7.png",
+      "name": "Realist Realty"
+    },
+    {
+      "id": 5,
+      "image": "https://imgdb.net/storage/uploads/2441f4b7c1438018dff4cd176d5bb7ed919dd2671af662dd67baefe4ba0a8229.png",
+      "name": "Real Estate"
+    }
+  ]

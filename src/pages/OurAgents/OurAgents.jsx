@@ -3,6 +3,7 @@ import cover from "../../assets/cover.jpg";
 import Navbar from "../shared/Navbar/Navbar";
 import { useLoaderData } from "react-router-dom";
 import Agent from "../../components/Agent/Agent";
+import OurClients from "../../components/OurClients/OurClients";
 const OurAgents = () => {
   const agents = useLoaderData();
   console.log(agents);
@@ -50,6 +51,7 @@ const OurAgents = () => {
             <Agent key={agent.id} agent={agent}></Agent>
           ))}
         </div>
+        <OurClients />
       </section>
     </div>
   );
