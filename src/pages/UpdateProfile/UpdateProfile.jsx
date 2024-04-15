@@ -9,7 +9,7 @@ import auth from "../../firebase/firebase.config";
 import { AlertContext } from "../../layouts/Root";
 
 const UpdateProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
 
   const { register, handleSubmit } = useForm({
@@ -27,7 +27,8 @@ const UpdateProfile = () => {
       displayName: name,
       photoURL: photoURL,
     })
-      .then((result) => {
+      .then(() => {
+        setUser({ displayName: name, photoURL: photoURL });
         successAlert("profile update");
         console.log("Profile updated");
       })

@@ -13,6 +13,7 @@ const Footer = () => {
   return (
     <footer className="py-10  bg-neutral mt-24">
       <div className="w-[90%] mx-auto flex flex-col text-center md:text-start md:flex-row gap-10 md:gap-5 items-center md:items-start  md:justify-between  text-white ">
+        {/* footer title */}
         <aside>
           <div className="flex md:justify-start justify-center ">
             <img src={logo} alt="" className="w-[200px] mb-5" />
@@ -37,8 +38,9 @@ const Footer = () => {
             </span>
           </div>
         </aside>
+        {/* footer nav section */}
         <nav className="flex flex-col space-y-3 ">
-          <h6 className="font-bold uppercase text-[#CA965C] mb-3 font-exo">
+          <h6 className="font-semibold uppercase text-[#CA965C] mb-3 font-exo">
             Services
           </h6>
           <Link className="link link-hover">Dream Dwelling Bangladesh</Link>
@@ -47,7 +49,7 @@ const Footer = () => {
           <Link className="link link-hover">Elite Living Properties</Link>
         </nav>
         <nav className="flex flex-col space-y-3">
-          <h6 className="font-bold uppercase text-[#CA965C] mb-3 font-exo">
+          <h6 className="font-semibold uppercase text-[#CA965C] mb-3 font-exo">
             Company
           </h6>
           <Link className="link link-hover">About us</Link>
@@ -56,16 +58,17 @@ const Footer = () => {
           <Link className="link link-hover">Press & Media</Link>
         </nav>
         <nav className="flex flex-col space-y-3">
-          <h6 className="font-bold uppercase text-[#CA965C] mb-3 font-exo">
+          <h6 className="font-semibold uppercase text-[#CA965C] mb-3 font-exo">
             Information
           </h6>
           <Link className="link link-hover">Terms of use</Link>
           <Link className="link link-hover">Privacy policy</Link>
           <Link className="link link-hover">Cookie policy</Link>
         </nav>
+        {/* news letter */}
         <div>
           <form>
-            <h6 className="font-bold uppercase text-[#CA965C] mb-3 font-exo">
+            <h6 className="font-semibold uppercase text-[#CA965C] mb-3 font-exo">
               Newsletter
             </h6>
             <fieldset className="form-control w-80">
@@ -84,9 +87,10 @@ const Footer = () => {
               </div>
             </fieldset>
           </form>
+          {/* social links */}
           <div className="mt-5">
             <h4 className="mb-3 font-exo">Connect with us</h4>
-            <div class="flex justify-center md:justify-start gap-8 text-xl">
+            <div className="flex justify-center md:justify-start gap-8 text-xl">
               <Link
                 to={"https://www.facebook.com/"}
                 target="_blank"

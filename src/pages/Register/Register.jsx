@@ -8,9 +8,10 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 import "react-toastify/dist/ReactToastify.css";
 import { AlertContext } from "../../layouts/Root";
+import auth from "../../firebase/firebase.config";
 
 const Register = () => {
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile, setUser } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
   const [error, setError] = useState("");
   const {
@@ -35,6 +36,7 @@ const Register = () => {
       .then((result) => {
         const loggedUser = result.user;
         updateUserProfile(name, photoURL);
+        setUser({ displayName: name, photoURL: photoURL });
         navigate("/");
         successAlert("register");
       })
