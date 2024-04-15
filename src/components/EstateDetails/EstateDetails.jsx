@@ -40,7 +40,7 @@ const EstateDetails = () => {
       {/* property details banner */}
       <div
         style={background}
-        className="w-full h-[300px] md:h-[500px] relative "
+        className="w-full h-[300px] md:h-[500px] relative"
       >
         <div className="w-full font-exo text-center text-2xl md:text-3xl text-white absolute top-1/2 -translate-y-1/2  left-1/2 -translate-x-1/2">
           <p

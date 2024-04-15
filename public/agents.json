@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "agent_name": "Rahim Hasan",
+      "agent_type": "Residential Sales",
+      "image": "https://imgdb.net/storage/uploads/992cadc1720f76f8aa0d5d83a924225a2dc5097954e07704badf0d685f5ef3b0.jpg",
+      "email": "rahim@example.com"
+    },
+    {
+      "id": 2,
+      "agent_name": "Jashim Uddin",
+      "agent_type": "Commercial Leasing",
+      "image": "https://imgdb.net/storage/uploads/8e10d44bbcba78e7ff9ae3b320a89cc9e710b9d4f0f94c0f3fb5f1c782bc254e.jpg",
+      "email": "jashim@example.com"
+    },
+    {
+      "id": 3,
+      "agent_name": "Kamal Ahmed",
+      "agent_type": "Buying Agent",
+      "image": "https://imgdb.net/storage/uploads/9a7f8082afafc854481a30e9acf97d139e9ca8fc7d08bcd2907327be04958fa5.jpg",
+      "email": "rahim@example.com"
+    },
+    {
+      "id": 4,
+      "agent_name": "Foyez Ahmad",
+      "agent_type": "Luxury Homes Specialist",
+      "image": "https://imgdb.net/storage/uploads/353bd19d41e5e405e723abc6d041f6c85c622c31d8ddbdd27c4b00b355a212dd.jpg",
+      "email": "foyez@example.com"
+    },
+    {
+      "id": 5,
+      "agent_name": "Abdul Bari",
+      "agent_type": "New Developments Expert",
+      "image": "https://imgdb.net/storage/uploads/f5432197215364b0599a6fc617a031796c0e4b0d783bd5a91b311c7144d0e66a.jpg",
+      "email": "abdulbari@example.com"
+    },
+    {
+      "id": 6,
+      "agent_name": "Arif Khan",
+      "agent_type": "Real Estate Broker",
+      "image": "https://imgdb.net/storage/uploads/992cadc1720f76f8aa0d5d83a924225a2dc5097954e07704badf0d685f5ef3b0.jpg",
+      "email": "arif@example.com"
+    }
+  ]
