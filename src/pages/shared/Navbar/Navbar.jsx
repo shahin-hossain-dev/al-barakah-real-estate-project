@@ -69,7 +69,10 @@ const Navbar = () => {
                   data-tip={user.displayName && user.displayName}
                 >
                   <div className="w-10 rounded-full">
-                    <img alt="User Image" src={user.photoURL || userImg} />
+                    <img
+                      alt="User Image"
+                      src={(user.photoURL && user.photoURL) || userImg}
+                    />
                   </div>
                 </div>
                 <ul
@@ -81,11 +84,9 @@ const Navbar = () => {
                       <Link to={"/user-profile"}>User Profile</Link>
                     </button>
                   </li>
+
                   <li>
-                    <button>Settings</button>
-                  </li>
-                  <li>
-                    <button>Logout</button>
+                    <button onClick={handleLogout}>Logout</button>
                   </li>
                 </ul>
               </div>
