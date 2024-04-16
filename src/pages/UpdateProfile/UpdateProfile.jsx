@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Navbar from "../shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
 
@@ -8,32 +8,60 @@ import { updateProfile } from "firebase/auth";
 import { AlertContext } from "../../layouts/Root";
 import auth from "../../firebase/firebase.config";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 const UpdateProfile = () => {
   const { user, setUser } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
+  const [userNameBtnShow, setUserNameBtnShow] = useState(true);
+  const [userPhotoBtnShow, setUserPhotoBtnShow] = useState(true);
+  const [btnShow, setBtnShow] = useState(false);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (
+      user.displayName === userNameBtnShow ||
+      userNameBtnShow.length === 0 ||
+      userNameBtnShow === true
+    ) {
+      setBtnShow(true);
+    } else {
+      setBtnShow(false);
+    }
+  }, [userNameBtnShow]);
+
+  useEffect(() => {
+    if (user.photoURL === userPhotoBtnShow || userPhotoBtnShow === true) {
+      setBtnShow(true);
+    } else {
+      setBtnShow(false);
+    }
+  }, [userPhotoBtnShow]);
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
       name: user?.displayName,
-      email: user?.email,
+      email: user.email ? user.email : "Email is not Permissible",
       photoURL: user?.photoURL,
     },
   });
 
   const handleUpdateProfile = (userData) => {
-    const name = userData.name;
+    const displayName = userData.name.trim();
     const photoURL = userData.photoURL;
+    const email = userData.email;
+
     updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: photoURL,
+      displayName,
+      photoURL,
     })
       .then(() => {
-        setUser({ displayName: name, photoURL: photoURL });
+        setUser(auth.currentUser);
+        setUser({ displayName, photoURL, email });
+        setBtnShow(true);
         successAlert("profile update");
-        console.log("Profile updated");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
 
   return (
@@ -57,6 +85,7 @@ const UpdateProfile = () => {
               </label>
               <input
                 {...register("name")}
+                onChange={(e) => setUserNameBtnShow(e.target.value)}
                 type="text"
                 placeholder="Name"
                 className="input input-bordered"
@@ -69,6 +98,7 @@ const UpdateProfile = () => {
               </label>
               <input
                 {...register("photoURL")}
+                onChange={(e) => setUserPhotoBtnShow(e.target.value)}
                 type="text"
                 placeholder="Photo URL"
                 className="input input-bordered"
@@ -85,15 +115,19 @@ const UpdateProfile = () => {
                 placeholder="email"
                 className="input input-bordered disabled"
                 disabled
-                required
+                title="You couldn't change this field"
               />
             </div>
             <div className="form-control mt-6">
-              <button className={`btn btn-neutral text-white`}>
-                Update Profile
-              </button>
+              <input
+                type="submit"
+                disabled={btnShow}
+                value={"Update Profile"}
+                className={`btn btn-neutral text-white`}
+              ></input>
             </div>
           </form>
+          <p className="text-center text-red-600">{error}</p>
         </div>
       </div>
     </div>

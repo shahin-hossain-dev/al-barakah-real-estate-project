@@ -7,7 +7,6 @@ import OurClients from "../../components/OurClients/OurClients";
 import { Helmet } from "react-helmet-async";
 const OurAgents = () => {
   const agents = useLoaderData();
-  console.log(agents);
 
   const background = {
     backgroundImage: `linear-gradient(to right, #00000099, #00000099),url(${cover})`,
