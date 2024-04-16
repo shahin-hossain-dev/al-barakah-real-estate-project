@@ -9,8 +9,8 @@ It is a residential real estate project. Help people/company for their real esta
 ### Here is the most important key features is this app.
 
 - This is a single page application.
-- User Authentication Systems.
-- Private routes for Only logged in user.
+- User authentication systems.
+- Private routes feature, access for only logged in user.
 - User profile updating option.
 - Dynamic route for property details view
 - Our Location Map

@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import Navbar from "../shared/Navbar/Navbar";
 import { background } from "../Login/Login";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -19,6 +19,7 @@ const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
   const [passwordShow, setPasswordShow] = useState(false);
+  const [eyeShow, setEyeShow] = useState(false);
   const {
     register,
     handleSubmit,
@@ -131,18 +132,25 @@ const Register = () => {
               </label>
               <div className="form-control relative ">
                 <input
-                  {...register("password", { required: true })}
+                  {...register("password", {
+                    required: true,
+                    onChange: (e) => {
+                      setEyeShow(e.target.value);
+                    },
+                  })}
                   type={passwordShow ? "text" : "password"}
                   placeholder="password"
                   className="input input-bordered "
                 />
                 {/* eye button */}
-                <span
-                  onClick={() => setPasswordShow(!passwordShow)}
-                  className="text-2xl absolute right-3 top-1/2 -translate-y-1/2"
-                >
-                  {passwordShow ? <FaEyeSlash /> : <FaEye />}
-                </span>
+                {eyeShow && (
+                  <span
+                    onClick={() => setPasswordShow(!passwordShow)}
+                    className="text-2xl absolute right-3 top-1/2 -translate-y-1/2"
+                  >
+                    {passwordShow ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                )}
               </div>
               {errors.password && (
                 <span className="text-red-600">
