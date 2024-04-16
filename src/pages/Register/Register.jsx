@@ -6,7 +6,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 import "react-toastify/dist/ReactToastify.css";
-import { AlertContext } from "../../layouts/Root";
+import { AlertContext, toastSetting } from "../../layouts/Root";
 import { Helmet } from "react-helmet-async";
 
 import { FaEye } from "react-icons/fa";
@@ -16,7 +16,7 @@ import { signOut } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 
 const Register = () => {
-  const { createUser, updateUserProfile, setUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
   const [passwordShow, setPasswordShow] = useState(false);
   const {
@@ -26,13 +26,6 @@ const Register = () => {
   } = useForm();
 
   const navigate = useNavigate();
-
-  // toast settings
-  const toastSetting = {
-    position: "top-center",
-    hideProgressBar: true,
-    autoClose: 2000,
-  };
 
   const handleRegister = (userData) => {
     const { name, email, password, photoURL } = userData;

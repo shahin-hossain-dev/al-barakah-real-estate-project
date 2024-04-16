@@ -6,24 +6,26 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "../pages/shared/Footer/Footer";
 
 export const AlertContext = createContext(null);
+
+// toast settings
+export const toastSetting = {
+  position: "top-center",
+  hideProgressBar: true,
+  autoClose: 2000,
+};
 const Root = () => {
-  const toastSetting = {
-    position: "top-center",
-    hideProgressBar: true,
-    autoClose: 1000,
-  };
   const successAlert = (type) => {
     if (type === "login") {
-      toast.success("Login Successfully", toastSetting);
+      toast.success("Login successfully", toastSetting);
     } else if (type === "register") {
-      toast.success("Account Create Successfully", toastSetting);
+      toast.success("Account create successfully", toastSetting);
     } else if (type === "profile update") {
-      toast.success("User Profile Updated", toastSetting);
+      toast.success("User profile updated", toastSetting);
     } else if (type === "logout") {
-      toast.success("Logout Successfully", toastSetting);
+      toast.success("Logout successfully", toastSetting);
     } else {
       if (type === "invalid") {
-        toast.error(" Invalid User & Password ", toastSetting);
+        toast.error(" Invalid user email & password ", toastSetting);
       }
     }
   };

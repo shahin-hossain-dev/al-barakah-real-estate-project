@@ -5,11 +5,12 @@ import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import "react-toastify/dist/ReactToastify.css";
-import { AlertContext } from "../../layouts/Root";
+import { AlertContext, toastSetting } from "../../layouts/Root";
 // icons
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 export const background = {
   backgroundImage: `url(${image5})`,
@@ -21,20 +22,26 @@ export const background = {
 const Login = () => {
   const { userLogin, googleLogin, githubLogin } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
-  const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   // console.log(location.state?.pathname);
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   // login handler
   const handleLogin = (userData) => {
     const email = userData.email;
     const password = userData.password;
+
+    if (password.length < 6) {
+      return toast.error(
+        "Password should be at least 6 characters",
+        toastSetting
+      );
+    }
+
     // user login
     userLogin(email, password)
       .then((result) => {
@@ -45,9 +52,12 @@ const Login = () => {
         }
       })
       .catch((error) => {
-        console.log(error.message);
         if (error.message.includes("invalid")) {
           successAlert("invalid");
+        } else if (error.message.includes("disabled")) {
+          toast.error("User account temporary disabled", toastSetting);
+        } else {
+          toast.error(error.message, toastSetting);
         }
       });
   };
@@ -61,7 +71,13 @@ const Login = () => {
           successAlert("login");
         }
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => {
+        if (error.message.includes("different-credential")) {
+          toast.error("User email already exist", toastSetting);
+        } else {
+          toast.error(error.message, toastSetting);
+        }
+      });
   };
   // github login
   const handleGithubLogin = () => {
@@ -73,7 +89,14 @@ const Login = () => {
           navigate(location.state?.pathname || "/");
         }
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => {
+        console.log(error);
+        if (error.message.includes("different-credential")) {
+          toast.error("User email already exist", toastSetting);
+        } else {
+          toast.error(error.message, toastSetting);
+        }
+      });
   };
   return (
     <div style={background}>
@@ -96,30 +119,34 @@ const Login = () => {
                 <span className="label-text text-white">Email</span>
               </label>
               <input
-                {...register("email")}
+                {...register("email", { required: true })}
                 type="email"
                 placeholder="email"
                 className="input input-bordered"
-                required
               />
+              {errors.email && (
+                <span className="text-red-600 mt-1">
+                  Please enter your email{" "}
+                </span>
+              )}
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-white">Password</span>
               </label>
               <input
-                {...register("password")}
+                {...register("password", { required: true })}
                 type="password"
                 placeholder="password"
                 className="input input-bordered"
-                required
               />
+              {errors.password && (
+                <span className="text-red-600 mt-1">
+                  Please enter a password{" "}
+                </span>
+              )}
             </div>
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover text-white">
-                Forgot password?
-              </a>
-            </label>
+
             <div className="form-control mt-6">
               <button className="btn btn-neutral  text-white">Login</button>
             </div>
@@ -148,7 +175,6 @@ const Login = () => {
               Continue with Github
             </button>
           </div>
-          <p className="text-red-600 text-center p-3">{error}</p>
         </div>
       </div>
     </div>

@@ -25,7 +25,6 @@ const AuthProvider = ({ children }) => {
 
   // sing in with email & password
   const userLogin = (email, password) => {
-    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
   // login with google
@@ -42,6 +41,7 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     return signOut(auth);
   };
+
   // on auth state change
 
   useEffect(() => {
