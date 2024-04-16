@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "question": "How can I schedule a property viewing?",
+      "answer": "You can schedule a property viewing by contacting our office directly or by submitting a request through our website. Our team will promptly assist you in arranging a convenient time for your visit."
+    },
+    {
+      "id": 2,
+      "question": "What documents do I need to provide when applying for a rental property?",
+      "answer": "Typically, you'll need to provide proof of income, identification (such as a driver's license or passport), and possibly references from previous landlords. Specific requirements may vary depending on the property and landlord."
+    },
+    {
+      "id": 3,
+      "question": "Can I list my property for sale with your agency?",
+      "answer": "Yes, we welcome property owners who wish to list their homes for sale with us. Our experienced agents will work closely with you to market your property effectively and guide you through the selling process."
+    },
+    {
+      "id": 4,
+      "question": "Do you offer property management services?",
+      "answer": "Yes, we provide comprehensive property management services to assist landlords in efficiently managing their rental properties. From tenant screening to maintenance coordination, we handle all aspects of property management."
+    },
+    {
+      "id": 5,
+      "question": "What are your commission rates for selling a property?",
+      "answer": "Our commission rates for selling a property vary depending on factors such as the property's value, location, and market conditions. Please contact our office for a personalized consultation and commission rate quote."
+    }
+  ]
+  

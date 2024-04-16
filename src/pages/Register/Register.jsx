@@ -12,6 +12,8 @@ import { Helmet } from "react-helmet-async";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { signOut } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
 
 const Register = () => {
   const { createUser, updateUserProfile, setUser } = useContext(AuthContext);
@@ -49,9 +51,12 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        updateUserProfile(name, photoURL);
-        setUser({ displayName: name, photoURL: photoURL });
-        navigate("/");
+        updateUserProfile(name, photoURL).then(() => {
+          signOut(auth);
+          navigate("/login");
+        });
+        // setUser({ displayName: name, photoURL: photoURL });
+
         successAlert("register");
       })
       .catch((error) => {
