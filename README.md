@@ -1,8 +1,23 @@
-# React + Vite
+# Al-Barakah Real Estate Project.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+It is a residential real estate project. Help people/company for their real estate solution.
 
-Currently, two official plugins are available:
+### Live Al-Barakah app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Al-Barakah Real Estate Ltd.](https://al-barakah.web.app/)
+
+### Here is the most important key features is this app.
+
+- This is a single page application.
+- User Authentication Systems.
+- Private routes for Only logged in user.
+- User profile updating option.
+- Dynamic route for property details view
+- Our Location Map
+
+### Packages use in the project
+
+- AOS Package.
+- React-leaflet.
+- React Hook form.
+- Swiper Slider.

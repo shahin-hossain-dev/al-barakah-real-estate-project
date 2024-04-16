@@ -30,7 +30,7 @@ const Footer = () => {
             </span>
             <span className="flex items-center gap-2">
               <IoCall className="text-[#CA965C]" />
-              <span>+08801676446077</span>
+              <span>+8801676446077</span>
             </span>
             <span className="flex items-center gap-2">
               <MdOutlineEmail className="text-[#CA965C]" />
