@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { AlertContext } from "../../../layouts/Root";
 
 const Navbar = () => {
-  const { user, logout, loading } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   const { successAlert } = useContext(AlertContext);
   const handleLogout = () => {
     logout()
@@ -65,7 +65,7 @@ const Navbar = () => {
                 <div
                   tabIndex={0}
                   role="button"
-                  className="btn btn-ghost btn-circle flex justify-center items-center  avatar tooltip tooltip-bottom"
+                  className="btn btn-ghost hover:bg-neutral btn-circle flex justify-center items-center  avatar tooltip tooltip-bottom"
                   data-tip={user.displayName && user.displayName}
                 >
                   <div className="w-10 rounded-full">
