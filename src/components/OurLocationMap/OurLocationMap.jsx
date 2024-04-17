@@ -27,7 +27,7 @@ const OurLocationMap = () => {
           scrollWheelZoom={false}
         >
           <TileLayer
-            attribution=' <a href="https://al-barakah.web.app/">Al-barakah Real Estate</a> '
+            attribution=' <a href="https://al-barakah.web.app/">Al-Barakah Real Estate Ltd.</a> '
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <Marker position={[23.8066, 90.381425]}>
