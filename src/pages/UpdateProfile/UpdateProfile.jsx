@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { background } from "../Login/Login";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
-import { AlertContext } from "../../layouts/Root";
+import { AlertContext, toastSetting } from "../../layouts/Root";
 import auth from "../../firebase/firebase.config";
 import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
@@ -16,7 +16,6 @@ const UpdateProfile = () => {
   const [userNameBtnShow, setUserNameBtnShow] = useState(true);
   const [userPhotoBtnShow, setUserPhotoBtnShow] = useState(true);
   const [btnShow, setBtnShow] = useState(false);
-  const [error, setError] = useState("");
 
   useEffect(() => {
     if (
@@ -61,7 +60,7 @@ const UpdateProfile = () => {
         setBtnShow(true);
         successAlert("profile update");
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => toast.message(error.message, toastSetting));
   };
 
   return (

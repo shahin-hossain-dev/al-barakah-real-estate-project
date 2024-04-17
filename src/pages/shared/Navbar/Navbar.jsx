@@ -4,7 +4,8 @@ import userImg from "../../../assets/user.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Link } from "react-router-dom";
-import { AlertContext } from "../../../layouts/Root";
+import { AlertContext, toastSetting } from "../../../layouts/Root";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const Navbar = () => {
       .then(() => {
         successAlert("logout");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => toast.error(error.message, toastSetting));
   };
 
   const links = (
