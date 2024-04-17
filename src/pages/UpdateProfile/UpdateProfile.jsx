@@ -126,7 +126,6 @@ const UpdateProfile = () => {
               ></input>
             </div>
           </form>
-          <p className="text-center text-red-600">{error}</p>
         </div>
       </div>
     </div>
