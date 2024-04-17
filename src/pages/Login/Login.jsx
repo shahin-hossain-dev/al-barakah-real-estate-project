@@ -2,7 +2,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import image5 from "../../assets/image5.webp";
 import Navbar from "../shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import "react-toastify/dist/ReactToastify.css";
 import { AlertContext, toastSetting } from "../../layouts/Root";
@@ -121,7 +121,7 @@ const Login = () => {
               <input
                 {...register("email", { required: true })}
                 type="email"
-                placeholder="email"
+                placeholder="name@example.com"
                 className="input input-bordered"
               />
               {errors.email && (
@@ -137,7 +137,7 @@ const Login = () => {
               <input
                 {...register("password", { required: true })}
                 type="password"
-                placeholder="password"
+                placeholder="Password"
                 className="input input-bordered"
               />
               {errors.password && (

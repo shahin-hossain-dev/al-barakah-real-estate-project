@@ -25,7 +25,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="absolute z-50 glass">
+    <div className="absolute z-50 glass md:px-5">
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">

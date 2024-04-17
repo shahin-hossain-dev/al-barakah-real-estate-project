@@ -20,8 +20,8 @@ const Estate = ({ estate }) => {
     <div
       className="card shadow-xl rounded-md relative border"
       data-aos="fade-up"
-      data-aos-duration="1000"
-      data-aos-delay="300"
+      data-aos-duration="500"
+      data-aos-delay="200"
     >
       <figure>
         <img

@@ -117,7 +117,7 @@ const Register = () => {
               <input
                 {...register("email", { required: true })}
                 type="email"
-                placeholder="email"
+                placeholder="name@example.com"
                 className="input input-bordered"
               />
               {errors.email && (
@@ -139,7 +139,7 @@ const Register = () => {
                     },
                   })}
                   type={passwordShow ? "text" : "password"}
-                  placeholder="password"
+                  placeholder="Password"
                   className="input input-bordered "
                 />
                 {/* eye button */}

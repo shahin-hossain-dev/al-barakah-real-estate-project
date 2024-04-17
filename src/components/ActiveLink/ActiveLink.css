@@ -7,7 +7,7 @@
     width: 80%;
     height: 2px;
     
-    background-color: goldenrod;
+    background: linear-gradient(to right, #CA965C, #EEC373);
     position: absolute;
     bottom: 0;
     left: 0;

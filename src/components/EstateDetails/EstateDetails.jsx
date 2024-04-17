@@ -6,7 +6,7 @@ import "./EstateDetails.css";
 import { FaDollarSign } from "react-icons/fa6";
 import { IoLocationOutline } from "react-icons/io5";
 import { Helmet } from "react-helmet-async";
-import OurLocationMap from "../OurLocationMap/OurLocationMap";
+import OurClients from "../OurClients/OurClients";
 
 const EstateDetails = () => {
   const estates = useLoaderData();
@@ -112,7 +112,7 @@ const EstateDetails = () => {
             Overview
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 md:w-[80%] mx-auto mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 md:w-[80%] mx-auto mt-12 shadow-xl rounded-md p-5 md:p-10">
           {/* col-1 */}
           <div className="space-y-4">
             <div className="flex justify-between items-center">
@@ -159,7 +159,9 @@ const EstateDetails = () => {
           </div>
         </div>
       </div>
-      <OurLocationMap />
+      <div className="mb-12 md:mb-24">
+        <OurClients />
+      </div>
     </div>
   );
 };
