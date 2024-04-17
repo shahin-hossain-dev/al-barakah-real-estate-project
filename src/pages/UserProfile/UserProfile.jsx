@@ -21,7 +21,7 @@ const UserProfile = () => {
         <title>User Profile | Al-Barakah Real Estate</title>
       </Helmet>
       <Navbar />
-      <div className="relative">
+      <div className="relative mb-12 md:mb-24">
         <div
           className="w-full h-[300px] md:h-[400px] relative"
           style={background}

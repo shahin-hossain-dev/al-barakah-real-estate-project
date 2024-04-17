@@ -70,8 +70,8 @@ const UpdateProfile = () => {
         <title>Update Profile | Al-Barakah Real Estate</title>
       </Helmet>
       <Navbar />
-      <div className=" flex justify-center items-center min-h-screen ">
-        <div className="card mt-24 shrink-0 w-full max-w-sm shadow-2xl glass">
+      <div className=" flex justify-center px-5 md:px-0 items-center min-h-screen bg-[#0000004D] ">
+        <div className="card  mt-24 shrink-0 w-full max-w-sm shadow-2xl glass">
           <h1 className="text-3xl mt-5 text-center font-bold text-white">
             Update Profile
           </h1>

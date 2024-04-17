@@ -36,7 +36,7 @@ const OurAgents = () => {
       </div>
       <section className="lg:w-[85%] w-[95%] mx-auto">
         {/* Agents section title & description */}
-        <div className=" text-center space-y-4 mt-12 md:mt-24 ">
+        <div className="mt-12 md:mt-24 text-center space-y-4 md:w-1/2 mx-auto">
           <h2
             className="text-2xl md:text-4xl font-bold font-exo"
             data-aos="fade-down"

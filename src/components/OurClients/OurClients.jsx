@@ -9,7 +9,7 @@ const OurClients = () => {
       .then((data) => setClients(data));
   }, []);
   return (
-    <div className="mt-12 md:mt-24">
+    <div className="my-12 md:my-24">
       <div>
         <h2
           className="text-2xl md:text-4xl font-bold font-exo text-center"

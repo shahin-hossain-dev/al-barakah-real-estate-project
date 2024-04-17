@@ -105,7 +105,7 @@ const Login = () => {
       </Helmet>
       <Navbar />
 
-      <div className=" flex justify-center items-center min-h-screen bg-[#0000004D] pb-5">
+      <div className=" flex justify-center items-center px-5 md:px-0 min-h-screen bg-[#0000004D] pb-5">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl glass mt-24">
           <h1 className="text-3xl mt-5 text-center font-bold text-white">
             Login now!

@@ -70,10 +70,10 @@ const Register = () => {
       </Helmet>
       <Navbar />
 
-      <div className=" flex justify-center items-center min-h-screen bg-[#0000004D] pb-5">
-        <div className="card mt-24 shrink-0 w-full max-w-sm shadow-2xl glass">
+      <div className=" flex justify-center items-center px-5 md:px-0 min-h-screen bg-[#0000004D] pb-5">
+        <div className="card mt-24 shrink-0 w-full max-w-sm  shadow-2xl glass">
           <h1 className="text-3xl mt-5 text-center font-bold text-white">
-            Create Account
+            Create an Account
           </h1>
           <form
             onSubmit={handleSubmit(handleRegister)}
@@ -89,8 +89,8 @@ const Register = () => {
                 className="input input-bordered"
               />
               {errors.name && (
-                <span className="text-red-600">
-                  Please fill out this field{" "}
+                <span className="text-red-600 mt-1">
+                  Please enter your full name{" "}
                 </span>
               )}
             </div>
@@ -105,8 +105,8 @@ const Register = () => {
                 className="input input-bordered"
               />
               {errors.photoURL && (
-                <span className="text-red-600">
-                  Please fill out this field{" "}
+                <span className="text-red-600 mt-1">
+                  Please enter your photo URL{" "}
                 </span>
               )}
             </div>
@@ -121,8 +121,8 @@ const Register = () => {
                 className="input input-bordered"
               />
               {errors.email && (
-                <span className="text-red-600">
-                  Please fill out this field{" "}
+                <span className="text-red-600 mt-1">
+                  Please enter your email{" "}
                 </span>
               )}
             </div>
@@ -146,15 +146,15 @@ const Register = () => {
                 {eyeShow && (
                   <span
                     onClick={() => setPasswordShow(!passwordShow)}
-                    className="text-2xl absolute right-3 top-1/2 -translate-y-1/2"
+                    className="text-2xl cursor-pointer absolute right-3 top-1/2 -translate-y-1/2"
                   >
                     {passwordShow ? <FaEyeSlash /> : <FaEye />}
                   </span>
                 )}
               </div>
               {errors.password && (
-                <span className="text-red-600">
-                  Please fill out this field{" "}
+                <span className="text-red-600 mt-1">
+                  Please enter your password{" "}
                 </span>
               )}
             </div>

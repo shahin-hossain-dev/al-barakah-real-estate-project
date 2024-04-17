@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 const Footer = () => {
   return (
-    <footer className="py-10  bg-neutral mt-24">
+    <footer className="py-10  bg-neutral">
       <div className="w-[90%] mx-auto flex flex-col text-center md:flex-wrap md:text-start md:flex-row gap-10  md:gap-10 lg:gap-5 items-center md:items-start  md:justify-between  text-white ">
         {/* footer title */}
         <aside>
