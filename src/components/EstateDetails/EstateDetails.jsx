@@ -71,25 +71,30 @@ const EstateDetails = () => {
         <div className="mb-16">
           <h2 className="text-2xl font-semibold font-exo">{estate_title}</h2>
           <div className="flex items-center mt-auto">
-            <div className="flex items-center mt-5">
-              <FaDollarSign className="text-xl" />
-              <h3 className="text-xl font-semibold">
-                {price}{" "}
-                {status === "Rent" ? (
-                  <span className="text-xl font-light text-[#876445]">
-                    /year
-                  </span>
-                ) : (
-                  <span className="text-xl font-normal text-[#876445]">
-                    /project
-                  </span>
-                )}
-              </h3>
-              <span className="mx-2 md:mx-5">|</span>
+            <div className="flex flex-col md:flex-row  md:items-center mt-5">
+              <div className="flex items-center">
+                <FaDollarSign className="text-xl" />
+                <h3 className="text-xl font-semibold">
+                  {price}{" "}
+                  {status === "Rent" ? (
+                    <span className="text-xl font-light text-[#876445]">
+                      /year
+                    </span>
+                  ) : (
+                    <span className="text-xl font-normal text-[#876445]">
+                      /project
+                    </span>
+                  )}
+                </h3>
+              </div>
+              <hr className="md:hidden border-b border-b-neutral-400 my-2" />
+              <span className="mx-2 md:mx-5 hidden md:flex">|</span>
+
               <span className="rounded-lg  px-3 py-1 top-2 right-2">
                 For {status}
               </span>
-              <span className="mx-2 md:mx-5">|</span>
+              <hr className="md:hidden border-b border-b-neutral-400 my-2" />
+              <span className="mx-2 md:mx-5 hidden md:flex">|</span>
               <div className="flex items-center gap-2 ">
                 <IoLocationOutline className="text-[#876445]" />
                 <p>{location}</p>
@@ -145,7 +150,7 @@ const EstateDetails = () => {
               <p className="font-semibold">Property status:</p>
               <p>For {status}</p>
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex gap-3 justify-between items-center">
               <p className="font-semibold">Facilities:</p>
               <div className="flex flex-wrap gap-2 md:flex-row">
                 {facilities.map((facility, idx) => (

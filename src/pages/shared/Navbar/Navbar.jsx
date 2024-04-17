@@ -54,7 +54,7 @@ const Navbar = () => {
           </div>
           <img src={logo} className=" w-2/3 lg:w-1/2 ms-3 lg:ms-0" alt="" />
         </div>
-        <div className=" gap-5 items-center navbar-center hidden lg:flex">
+        <div className=" gap-5 items-center navbar-center hidden md:flex">
           {links}
         </div>
 
