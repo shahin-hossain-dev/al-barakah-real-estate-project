@@ -2,6 +2,18 @@ import React from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./OurLocationMap.css";
+import { FaMapLocation } from "react-icons/fa6";
+import markerIcon from "../../assets/marker-icon.png";
+import iconShadow from "../../assets/marker-shadow.png";
+import iconLayer from "../../assets/layers.png";
+
+const icon = L.icon({
+  iconUrl: markerIcon,
+  iconRetinaUrl: iconLayer,
+  shadowUrl: iconShadow,
+  iconAnchor: [13, 41],
+  popupAnchor: [0, -32],
+});
 
 const OurLocationMap = () => {
   return (
@@ -30,7 +42,8 @@ const OurLocationMap = () => {
             attribution=' <a href="https://al-barakah.web.app/">Al-Barakah Real Estate Ltd.</a> '
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[23.8066, 90.381425]}>
+          <Marker position={[23.8066, 90.381425]} icon={icon}>
+            <FaMapLocation />
             <Popup>
               <p className="text-center">
                 Al-Barakah <br /> Real Estate Ltd.
