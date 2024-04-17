@@ -5,17 +5,14 @@ import "./OurLocationMap.css";
 import { FaMapLocation } from "react-icons/fa6";
 import markerIcon from "../../assets/marker-icon.png";
 import iconShadow from "../../assets/marker-shadow.png";
-import iconLayer from "../../assets/layers.png";
-
-const icon = L.icon({
-  iconUrl: markerIcon,
-  iconRetinaUrl: iconLayer,
-  shadowUrl: iconShadow,
-  iconAnchor: [13, 41],
-  popupAnchor: [0, -32],
-});
 
 const OurLocationMap = () => {
+  const icon = L.icon({
+    iconUrl: markerIcon,
+    shadowUrl: iconShadow,
+    iconAnchor: [13, 41],
+    popupAnchor: [0, -32],
+  });
   return (
     <div>
       <div className="mt-12 md:mt-24 text-center space-y-4 md:w-1/2 mx-auto">
